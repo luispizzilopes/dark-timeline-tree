@@ -33,6 +33,7 @@ export default function App() {
   const [center, setCenter] = useState(null)
   const [intro, setIntro] = useState(true)
   const [sheet, setSheet] = useState(true)
+  const [legendOpen, setLegendOpen] = useState(false)
 
   useEffect(() => { const t = setTimeout(() => setIntro(false), 2600); return () => clearTimeout(t) }, [])
 
@@ -156,7 +157,8 @@ export default function App() {
           </div>
         </aside>
       </main>
-      <footer>
+      <footer className={legendOpen ? 'legend-open' : ''}>
+        <button type="button" className="legend-toggle" aria-expanded={legendOpen} onClick={() => setLegendOpen(!legendOpen)}>Legenda e linhas {legendOpen ? '▾' : '▴'}</button>
         <ul className="legend" aria-label="Legenda (clique nos tipos de linha para ocultar/mostrar)">
           <li><span className="lg amber">∞</span> paradoxo de bootstrap (membro do ciclo)</li>
           <li><span className="lg blood" /> existência depende do nó temporal</li>
