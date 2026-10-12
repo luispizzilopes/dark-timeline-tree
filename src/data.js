@@ -1,6 +1,8 @@
 import raw from '../dark-genealogia.json'
+import { buildKinshipGraph } from './kinship.js'
 
 export const DATA = raw
+export const KG = buildKinshipGraph(raw)
 export const CH = Object.fromEntries(raw.characters.map((c) => [c.id, c]))
 export const WORLD = Object.fromEntries(raw.worlds.map((w) => [w.id, w]))
 export const PARADOX = Object.fromEntries(raw.paradoxes.map((p) => [p.id, p]))

@@ -1,3 +1,4 @@
+import { KinshipSection } from './KinshipPanel.jsx'
 import { CH, CERTAINTY_LABEL, DATA, GROUP_BY_SLUG, PARADOX, TYPE_LABEL, WORLD, shortName } from '../data.js'
 
 const Chip = ({ id, onGo }) => {
@@ -66,6 +67,8 @@ export function PersonPanel({ id, onGo, onFocus, focusMode, onParadox }) {
             <span key={p.relationshipId} className="pp"><Chip id={p.personId} onGo={onGo} /><small>{(p.kind || p.status || '').replace(/_/g, ' ')}</small></span>
           ))}</span></div>
       )}
+
+      <KinshipSection id={id} onGo={onGo} onParadox={onParadox} />
 
       <h3>Tempo</h3>
       <div className={'box ' + (bp.isInvolved ? 'amber' : '')}>
