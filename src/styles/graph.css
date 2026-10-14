@@ -1,0 +1,30 @@
+/* grafo */
+.rail { stroke: rgba(255,255,255,.025); stroke-dasharray: 2 8; }
+.edge { fill: none; stroke: #5d7886; stroke-width: 1.5; transition: opacity .3s, stroke .3s; }
+.edge.soft { stroke-dasharray: 5 5; opacity: .75; }
+.edge.paradox { stroke: var(--amber); stroke-width: 2.4; stroke-dasharray: 7 7; animation: dash 1.4s linear infinite; filter: drop-shadow(0 0 4px rgba(230,183,57,.6)); }
+.edge.back { stroke-width: 2.8; }
+.edge.lit { stroke: var(--gold); stroke-width: 3; opacity: 1; }
+.edge.dim, .spouse.dim, .partner.dim { opacity: .07; }
+@keyframes dash { to { stroke-dashoffset: -28; } }
+.spouse { transition: opacity .3s; }
+.spouse path { fill: none; stroke: #d98f55; stroke-width: 3.2; stroke-linecap: round; }
+.partner { fill: none; stroke: var(--blood); stroke-width: 1.1; stroke-dasharray: 2 5; opacity: .8; }
+.node { cursor: pointer; transition: opacity .3s; }
+.node.dim { opacity: .16; }
+.node .halo { fill: none; stroke: transparent; stroke-width: 6; transition: .25s; }
+.node .ring { fill: #0b1014; stroke-width: 2.2; }
+.node .back { fill: #11181d; }
+.node .ini { fill: var(--mute); font-family: var(--cond); font-size: 18px; letter-spacing: 1px; }
+.node image { filter: grayscale(.75) contrast(1.15) brightness(.78) sepia(.25) hue-rotate(170deg); transition: filter .3s; }
+.node:hover image, .node.sel image, .node.lit image { filter: grayscale(.1) contrast(1.05) brightness(1); }
+.node:hover .halo { stroke: rgba(230,183,57,.25); }
+.node.sel .halo { stroke: rgba(230,183,57,.55); }
+.node.cycle .ring { filter: drop-shadow(0 0 6px rgba(230,183,57,.7)); }
+.node .label { fill: #b9c4ca; font-family: var(--cond); font-weight: 300; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; paint-order: stroke; stroke: #05070a; stroke-width: 3px; }
+.node.sel .label, .node:hover .label { fill: var(--amber); }
+.badge { stroke: #000; stroke-width: 1.5; } .badge.amber, .badge-dot.amber { fill: var(--amber); }
+.badge-dot.blood { fill: var(--blood); stroke: #000; }
+.bt { font-size: 14px; font-weight: 700; fill: #000; }
+.star { fill: var(--gold); font-size: 16px; filter: drop-shadow(0 0 4px #000); }
+

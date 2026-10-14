@@ -10,7 +10,7 @@ import json, os, sys, itertools
 from collections import defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "dark-genealogia.json")
+OUT = os.path.join(HERE, "..", "src", "data", "dark-genealogia.json")
 IM = json.load(open(os.path.join(HERE, "images.json"), encoding="utf-8"))
 
 # --------------------------------------------------------------------------- mundos
